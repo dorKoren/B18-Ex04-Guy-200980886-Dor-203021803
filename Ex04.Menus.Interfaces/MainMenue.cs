@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace Ex04.Menus.Interfaces
 {
     public class MainMenue
     {
-        #region Read Only Members
         private readonly SubMenu r_MainItemsCollection;
-        #endregion  Read Only Members
+        private readonly string r_Exit = "Exit";
+        private readonly int r_ExitChoiceIndex = 0;
 
         #region Constructor
         public MainMenue()
@@ -28,9 +25,9 @@ namespace Ex04.Menus.Interfaces
         public void Add(MenuItem i_Item)
         {
             MainItemsCollection.Add(i_Item);
-            if (MainItemsCollection.ItemList.Count == 2)
+            if (MainItemsCollection.ItemList.Count == 2)   // Bag potential ?!
             {
-                MainItemsCollection.ItemList[0].Title = "Exit";
+                MainItemsCollection.ItemList[r_ExitChoiceIndex].Title = r_Exit;
             }
         }
  
@@ -38,7 +35,6 @@ namespace Ex04.Menus.Interfaces
         {
             MainItemsCollection.DoWhenSelected();
         }
-
         #endregion Public Methods
     }
 }

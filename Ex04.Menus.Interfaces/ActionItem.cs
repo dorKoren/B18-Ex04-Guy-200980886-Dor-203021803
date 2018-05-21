@@ -4,9 +4,7 @@ namespace Ex04.Menus.Interfaces
 {
     public class ActionItem : MenuItem
     {
-        #region Class Members
         private IAction m_Action;
-        #endregion Class Members
 
         #region Constructors
         public ActionItem()

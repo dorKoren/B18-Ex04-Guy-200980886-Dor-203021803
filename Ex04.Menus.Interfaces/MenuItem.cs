@@ -3,16 +3,18 @@ namespace Ex04.Menus.Interfaces
 {
     public abstract class MenuItem
     {
+        #region Class Members
         private string m_Title = string.Empty;
-        private int m_ItemNumber = 0;
+        private int m_ItemIndex = 0;
+        #endregion Class Members 
 
         internal abstract void DoWhenSelected();
 
         #region Properties
-        internal int ItemNumber
+        internal int ItemIndex
         {
-            get { return m_ItemNumber; }
-            set { m_ItemNumber = value; }
+            get { return m_ItemIndex; }
+            set { m_ItemIndex = value; }
         }
 
         internal string Title

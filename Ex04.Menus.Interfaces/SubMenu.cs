@@ -6,11 +6,13 @@ namespace Ex04.Menus.Interfaces
     public class SubMenu : MenuItem
     {
         #region Class Members
-        private const int k_BackOptionNumber = 0;
+        private const int k_BackChoiceIndex = 0;  // for Back (or Exit in case of MainMenu).
+        private readonly string r_Back = "Back";
         private readonly List<MenuItem> r_ItemList;
         #endregion Class Members
 
         #region Constructors
+        /* Default constructor for empty menu */
         public SubMenu()
         {
             r_ItemList = new List<MenuItem>();
@@ -39,29 +41,33 @@ namespace Ex04.Menus.Interfaces
 
         #region Public & Internal Methods 
         /// <summary>
+        /// Add a new menu item to this sub menu.
+        /// if there are not items in the list add "Back" item option, and the new item.
         /// 
         /// </summary>
         /// <param name="i_MenuSubItemToAdd"></param>
         /// <returns></returns>
-        public SubMenu Add(MenuItem i_MenuSubItemToAdd)
+        public void Add(MenuItem i_MenuSubItemToAdd)
         {
             bool isFirstItemInList = ItemList.Count == 0;
+
             if (isFirstItemInList)
             {
+                // Add "Back" item
                 MenuItem backItem = new ActionItem
                 {
-                    Title = "Back",
-                    ItemNumber = 0
+                    Title = r_Back,
+                    ItemIndex = k_BackChoiceIndex
                 };
 
                 ItemList.Add(backItem);
             }
 
-            i_MenuSubItemToAdd.ItemNumber = ItemList.Count;
+            // Update item index for the given MenuItem
+            i_MenuSubItemToAdd.ItemIndex = ItemList.Count;
 
+            // Append the given MenuItem to this item list
             ItemList.Add(i_MenuSubItemToAdd);
-
-            return this;
         }
 
         internal override void DoWhenSelected()
@@ -84,16 +90,16 @@ namespace Ex04.Menus.Interfaces
 
             do
             {
-                Console.WriteLine(Title.ToString());
+                Console.WriteLine(Title);
                 printItemList();
                 choice = getChoiceFromUser();
                 Console.Clear();
-                if (choice != k_BackOptionNumber)
+                if (choice != k_BackChoiceIndex)
                 {
                     ItemList[choice].DoWhenSelected();
                 }
             }
-            while (choice != k_BackOptionNumber);
+            while (choice != k_BackChoiceIndex);
         }
 
         private void printItemList()
@@ -103,7 +109,7 @@ namespace Ex04.Menus.Interfaces
 
             foreach (MenuItem item in ItemList)
             {
-                if (!(item.ItemNumber == k_BackOptionNumber))
+                if (item.ItemIndex != k_BackChoiceIndex)
                 {
                     listToPrint.Add(item);
                 }
@@ -111,10 +117,10 @@ namespace Ex04.Menus.Interfaces
 
             foreach (MenuItem item in listToPrint)
             {
-                Console.WriteLine(format, item.ItemNumber.ToString(), item.Title.ToString());
+                Console.WriteLine(format, item.ItemIndex, item.Title);
             }
 
-            Console.WriteLine(format, ItemList[0].ItemNumber.ToString(), ItemList[0].Title.ToString());
+            Console.WriteLine(format, ItemList[0].ItemIndex, ItemList[0].Title);
         }
 
         private int getChoiceFromUser()
@@ -122,7 +128,7 @@ namespace Ex04.Menus.Interfaces
             int choice;
             string choiceString;
 
-            Console.Write("Option #: ");
+            Console.Write("Choice Index: ");
             choiceString = Console.ReadLine();
 
             while (!int.TryParse(choiceString, out choice) || (choice < 0 || choice > ItemList.Count - 1))
