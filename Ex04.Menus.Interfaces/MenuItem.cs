@@ -11,13 +11,13 @@ namespace Ex04.Menus.Interfaces
         internal abstract void DoWhenSelected();
 
         #region Properties
-        internal int ItemIndex
+        public int ItemIndex
         {
             get { return m_ItemIndex; }
             set { m_ItemIndex = value; }
         }
 
-        internal string Title
+        public string Title
         {
             get { return m_Title; }
             set { m_Title = value; }

@@ -90,8 +90,9 @@ namespace Ex04.Menus.Interfaces
 
             do
             {
-                Console.WriteLine(Title);
+                Console.WriteLine("-----------------------\n" + Title);
                 printItemList();
+                Console.WriteLine("-----------------------");
                 choice = getChoiceFromUser();
                 Console.Clear();
                 if (choice != k_BackChoiceIndex)

@@ -1,14 +1,14 @@
 ﻿
 namespace Ex04.Menus.Interfaces
 {
-    public class MainMenue
+    public class MainMenu
     {
         private readonly SubMenu r_MainItemsCollection;
         private readonly string r_Exit = "Exit";
         private readonly int r_ExitChoiceIndex = 0;
 
         #region Constructor
-        public MainMenue()
+        public MainMenu()
         {
             r_MainItemsCollection = new SubMenu();
         }
