@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Delegates
 {
     public class SubMenu : MenuItem
     {
@@ -142,3 +142,4 @@ namespace Ex04.Menus.Interfaces
         #endregion Private Mehods
     }
 }
+
