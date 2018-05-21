@@ -10,7 +10,7 @@ namespace Ex04.Menus.Test
     {
         public class Date : IAction
         {
-            public void DoIt()
+            public void Do()
             {
                 Console.WriteLine(DateTime.Now.Date.ToString());
             }
@@ -18,7 +18,7 @@ namespace Ex04.Menus.Test
 
         public class Time : IAction
         {
-            public void DoIt()
+            public void Do()
             {
                 Console.WriteLine(DateTime.Now.TimeOfDay.ToString());
             }
@@ -26,7 +26,7 @@ namespace Ex04.Menus.Test
 
         public class CountCapitals : IAction
         {
-            public void DoIt()
+            public void Do()
             {
                 Console.WriteLine("Please write a sentence: ");
                 string answer = Console.ReadLine();
@@ -46,7 +46,7 @@ namespace Ex04.Menus.Test
 
         public class ShowVersion : IAction
         {
-            public void DoIt()
+            public void Do()
             {
                 Console.WriteLine("Version: 18.2.4.0");
             }

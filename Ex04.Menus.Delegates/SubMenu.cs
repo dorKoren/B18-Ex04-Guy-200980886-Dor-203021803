@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Delegates
 {
     public class SubMenu : MenuItem
     {
@@ -90,9 +90,8 @@ namespace Ex04.Menus.Interfaces
 
             do
             {
-                Console.WriteLine("-----------------------\n" + Title);
+                Console.WriteLine(Title);
                 printItemList();
-                Console.WriteLine("-----------------------");
                 choice = getChoiceFromUser();
                 Console.Clear();
                 if (choice != k_BackChoiceIndex)
@@ -143,3 +142,4 @@ namespace Ex04.Menus.Interfaces
         #endregion Private Mehods
     }
 }
+

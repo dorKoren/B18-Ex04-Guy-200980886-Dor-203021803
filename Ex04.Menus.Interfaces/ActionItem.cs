@@ -36,7 +36,7 @@ namespace Ex04.Menus.Interfaces
             }
             else
             {
-                Action.DoIt();
+                Action.Do();
             }
         }
         #endregion Internal Methods
