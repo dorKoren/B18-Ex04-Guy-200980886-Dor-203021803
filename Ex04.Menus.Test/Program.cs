@@ -8,7 +8,7 @@ namespace Ex04.Menus.Test
         public static void Main()
         {
             DemonstrateInterfacesMenu();
-            DemonstrateDelegatesMenu();
+            DemonstrateDelegateMenu();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Ex04.Menus.Delegates
 
         internal abstract void DoWhenSelected();
 
-        internal int ItemIndex
+        public int ItemIndex
         {
             get { return m_ItemIndex; }
             set { m_ItemIndex = value; }
