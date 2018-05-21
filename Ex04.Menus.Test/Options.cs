@@ -6,7 +6,7 @@ namespace Ex04.Menus.Test
     using Ex04.Menus.Interfaces;
     using Ex04.Menus.Delegates;
 
-    public class Examples
+    public class Options
     {
         public class Date : IAction
         {

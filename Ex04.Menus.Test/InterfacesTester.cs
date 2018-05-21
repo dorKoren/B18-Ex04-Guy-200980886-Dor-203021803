@@ -18,13 +18,13 @@ namespace Ex04.Menus.Test
             mainMenu.MainItemsCollection.Title = "*** Main Menu - Interfaces ***";
 
             SubMenu dateAndTime = new SubMenu("Show Date/Time");
-            dateAndTime.Add(new ActionItem("Show Time", new Examples.Time()));
-            dateAndTime.Add(new ActionItem("Show Date", new Examples.Date()));
+            dateAndTime.Add(new ActionItem("Show Time", new Options.Time()));
+            dateAndTime.Add(new ActionItem("Show Date", new Options.Date()));
             mainMenu.Add(dateAndTime);
 
             SubMenu versionAndCapitals = new SubMenu("Version and Capitals");
-            versionAndCapitals.Add(new ActionItem("Count Capitals", new Examples.CountCapitals()));
-            versionAndCapitals.Add(new ActionItem("Show Version", new Examples.ShowVersion()));
+            versionAndCapitals.Add(new ActionItem("Count Capitals", new Options.CountCapitals()));
+            versionAndCapitals.Add(new ActionItem("Show Version", new Options.ShowVersion()));
             mainMenu.Add(versionAndCapitals);
 
             return mainMenu;
