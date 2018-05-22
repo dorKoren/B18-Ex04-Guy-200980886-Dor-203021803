@@ -8,7 +8,7 @@ namespace Ex04.Menus.Test
 
     public static class DelegateTester
     {
-        public static void DemonstrateDelegateMenu()
+        public static void RunDelegateMenu()
         {
             MainMenu mainMenu = buildDelegateMenu();
             mainMenu.Show();
@@ -17,7 +17,7 @@ namespace Ex04.Menus.Test
         private static MainMenu buildDelegateMenu()
         {
             MainMenu mainMenu = new MainMenu();
-            mainMenu.MainItemsCollection.Title = "*** Main Menu - Delegate ***";
+            mainMenu.MainMenuItems.Title = " Main Menu (Delegate) ";
 
             SubMenu dateAndTime = new SubMenu("Show Date/Time");
             dateAndTime.Add(new ActionItem("Show Time", new Options.Time().Do));

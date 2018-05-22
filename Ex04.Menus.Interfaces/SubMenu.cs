@@ -23,13 +23,6 @@ namespace Ex04.Menus.Interfaces
             r_ItemList = new List<MenuItem>();
             Title = i_Title;
         }
-
-        public SubMenu(string i_Title, MenuItem i_MenuSubItem)
-        {
-            r_ItemList = new List<MenuItem>();
-            Title = i_Title;
-            Add(i_MenuSubItem);
-        }
         #endregion Constructors
 
         #region Properties

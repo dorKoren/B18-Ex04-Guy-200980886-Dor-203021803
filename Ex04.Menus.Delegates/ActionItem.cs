@@ -24,13 +24,13 @@ namespace Ex04.Menus.Delegates
         #region Methods
         internal override void DoWhenSelected()
         {
-            if (ActionToDoWhenSelected == null)
+            if (ActionToDoWhenSelected != null)
             {
-                Console.WriteLine("Item not initalized yet.");
+                ActionToDoWhenSelected.Invoke();
             }
             else
             {
-                ActionToDoWhenSelected.Invoke();
+                Console.WriteLine("Nothing to do when selected, event holds no refrences.");
             }
         }
         #endregion Methods

@@ -6,7 +6,7 @@ namespace Ex04.Menus.Test
 
     public static class InterfacesTester
     {
-        public static void DemonstrateInterfacesMenu()
+        public static void RunInterfacesMenu()
         {
             MainMenu mainMenu = buildInterfacesMenu();
             mainMenu.Show();
@@ -15,7 +15,7 @@ namespace Ex04.Menus.Test
         private static MainMenu buildInterfacesMenu()
         {
             MainMenu mainMenu = new MainMenu();
-            mainMenu.MainItemsCollection.Title = "*** Main Menu - Interfaces ***";
+            mainMenu.MainMenuItems.Title = " Main Menu (Interfaces) ";
 
             SubMenu dateAndTime = new SubMenu("Show Date/Time");
             dateAndTime.Add(new ActionItem("Show Time", new Options.Time()));

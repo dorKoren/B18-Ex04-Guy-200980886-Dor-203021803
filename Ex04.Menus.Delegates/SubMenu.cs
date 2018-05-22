@@ -23,13 +23,6 @@ namespace Ex04.Menus.Delegates
             r_ItemList = new List<MenuItem>();
             Title = i_Title;
         }
-
-        public SubMenu(string i_Title, MenuItem i_MenuSubItem)
-        {
-            r_ItemList = new List<MenuItem>();
-            Title = i_Title;
-            Add(i_MenuSubItem);
-        }
         #endregion Constructors
 
         #region Properties
@@ -90,8 +83,9 @@ namespace Ex04.Menus.Delegates
 
             do
             {
-                Console.WriteLine(Title);
+                Console.WriteLine("-----------------------\n" + Title);
                 printItemList();
+                Console.WriteLine("-----------------------");
                 choice = getChoiceFromUser();
                 Console.Clear();
                 if (choice != k_BackChoiceIndex)
@@ -119,7 +113,7 @@ namespace Ex04.Menus.Delegates
             {
                 Console.WriteLine(format, item.ItemIndex, item.Title);
             }
-
+            // Print the BackItem last
             Console.WriteLine(format, ItemList[0].ItemIndex, ItemList[0].Title);
         }
 

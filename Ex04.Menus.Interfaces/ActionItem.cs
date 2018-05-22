@@ -30,13 +30,13 @@ namespace Ex04.Menus.Interfaces
         #region Internal Methods
         internal override void DoWhenSelected()
         {
-            if (Action == null)
+            if (Action != null)
             {
-                Console.WriteLine("Item not initalized yet.");
+                Action.Do();
             }
             else
             {
-                Action.Do();
+                Console.WriteLine("Nothing to do when selected, Action hasn't been initialized"); 
             }
         }
         #endregion Internal Methods

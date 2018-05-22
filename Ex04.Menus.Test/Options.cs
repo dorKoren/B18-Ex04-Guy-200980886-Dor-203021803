@@ -30,7 +30,7 @@ namespace Ex04.Menus.Test
             {
                 Console.WriteLine("Please write a sentence: ");
                 string answer = Console.ReadLine();
-                Console.WriteLine("Number of capital letters is: {0}", numberOfCapitalLetters(answer));
+                Console.WriteLine("Number of Capital Letters is: {0}", numberOfCapitalLetters(answer));
             }
 
             private int numberOfCapitalLetters(string i_String)
